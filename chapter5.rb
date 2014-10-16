@@ -128,4 +128,16 @@ puts 'Might I suggest the number ' + new_favorite_number + 'as a better alternat
 
 
 #5.7 Mind Your Variables
+#name variables with useful names that are easy to know what they
+#do at a glance
+#use something obvious, like if dealing with names, use name
+#if dealing with people's ages, use age
+#if converting into a string and you want to save that conversion
+#use age_as_string something to that effect.
+
+#also place close attention to conversion errors
+#Fixnum errors are usually this 
+#note: in programming languages there are Fixnum and Bignums
+#Fixnums are smaller integers, Bignums are for large integers 
+#most programming languages do not have Bignums
 
