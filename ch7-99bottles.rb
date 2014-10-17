@@ -15,7 +15,7 @@ while counter <= 99 && counter != 0
 
     if counter == 0
 		puts counter.to_s + ' bottles of beer, on the wall!'
-		puts 'Hey, lets go to the store and get some more!'
+		puts 'Hey, lets go to the store and buy some more!'
 		break
 	end
 end
