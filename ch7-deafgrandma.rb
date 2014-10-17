@@ -32,21 +32,32 @@
 #that way. So, I guess you’ll have to do something to 
 #the number rand returns to you.
 
-puts "Hey Grandma there is something I want to tell you:"
-tell = gets.chomp
+#Chapter 7 
+#section 4
+#A Few Things to Try
 
-#unless you shout she can't hear you 
-#shout
-while tell == tell.downcase || tell.capitalize		#loops till I get it right
-	
-	if tell == tell.upcase
-		random_20 = rand(21)						#pick random # between 1-20
-		random_20_date = random_20 + 1930 			#add to 
-		puts "NO, NOT SINCE " + random_20_date.to_s
-		break										#need a break in her to avoid
-	else											#infinity loop
-		puts 'HUH?! SPEAK UP SONNY!'
-		puts "Ooo, Ok I'll say it again"			#re-state tell
-		tell = gets.chomp
+#Deaf grandma. 
+
+puts "Hey, its your grandmother! How are you?"
+
+while (response = gets.chomp) != 'BYE'
+	if response != response.upcase
+		puts "WHAT? What was that?"
+	end
+
+	if (response == response.upcase)
+		puts "NO, NOT SINCE " + (1930+rand(21).to_s + "!"
 	end
 end
+
+#says goodbye is BYE is said
+puts 'Goodbye!'
+
+
+
+
+
+
+
+
+
