@@ -306,6 +306,40 @@ end
 #if you shout BYE three times but not in a row, 
 #you should still be talking to Grandma.
 
+#Chapter 7 
+#section 4
+#A Few Things to Try
+
+#Deaf grandma extended
+#simple solution to problem
+#simple is better.
+
+puts "ME SO LONELY! TALK TO ME!\n"
+bye = 0
+#instead of using BYE as a condition to run while loop
+#just use bye as a counter.
+#it reduces the amount of code needed and keeps things simple
+#and easy to understand / maintain 
+while bye < 3
+  response = gets.chomp
+  if response == "BYE"
+    puts "STAY LONGER!?!"
+    bye = (bye+1)
+  elsif response == response.upcase
+  	#simple way to output random year between
+  	#1930 - 1950
+  	##{} allows substitution in string variable
+    puts "NO! NOT SINCE #{1930+rand(21)}!"
+    #resets bye to 0, because bye needs to happen 3x in a row
+    bye = 0
+  else
+    puts "Huh?! QUE!? I CAN'T HEAR YOU!"
+    #resets bye to 0, because bye needs to happen 3x in a row
+    bye = 0
+  end
+end
+
+
 
 #Leap years. 
 #Write a program that asks for a starting year 
@@ -316,3 +350,31 @@ end
 #(such as 1800 and 1900) unless they are also divisible by 400 
 #(such as 1600 and 2000, which were in fact leap years). 
 #What a mess!
+
+puts "The Leap Year Program"
+puts ""
+puts "What is the starting year?"
+startYear = gets.to_i
+puts "What is the ending year?"
+
+#checks if valid entry
+#also gets end year while at it.
+while (endYear = gets.to_i) < startYear
+    puts "Your end year must be LATER than your start year. Please re-submit:"
+end
+
+#simple, clear, concise while loop conditional
+#no need for a counter
+while startYear < endYear
+	#the insight here is in using a double while loop
+	#no need for if statements.
+	#also the coditional logic is clear.
+	#if divisable by 4, but not by 100
+	#or divisable by 100 and 400
+    while ((startYear % 4 == 0 and startYear % 100 != 0) or (startYear % 100 == 0 and startYear % 400 == 0))
+        puts startYear.to_s
+        #simple increment
+        startYear = startYear + 1       
+    end
+    startYear = startYear + 1
+end
