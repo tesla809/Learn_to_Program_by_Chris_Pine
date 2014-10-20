@@ -2,62 +2,31 @@
 #section 4
 #A Few Things to Try
 
-#Deaf grandma. 
-#Whatever you say to Grandma (whatever you type in), 
-#she should respond with this:
-#HUH?! SPEAK UP, SONNY!
-#unless you shout it (type in all capitals). 
-#If you shout, she can hear you (or at least she thinks so) 
-#and yells back:
-#NO, NOT SINCE 1938!
+#Deaf grandma extended
+#simple solution to problem
+#simple is better.
 
-#To make your program really believable, 
-#have Grandma shout a different year each time, 
-#maybe any year at random between 1930 and 1950. 
-#(This part is optional and would be much easier 
-#if you read the section on Ruby’s random number generator 
-#on page 38.) 
-
-
-#You can’t stop talking to Grandma 
-#until you shout BYE.
-#Hint 1: Don’t forget about chomp! 'BYE' with an Enter 
-#at the end is not the same as 'BYE' without one!
-#Hint 2: Try to think about what parts of your program 
-#should happen over and over again. 
-#All of those should be in your while loop.
-#Hint 3: People often ask me, 
-#“How can I make rand give me a number in a range not 
-#starting at zero?” Well, you can’t; rand just doesn’t work 
-#that way. So, I guess you’ll have to do something to 
-#the number rand returns to you.
-
-#Chapter 7 
-#section 4
-#A Few Things to Try
-
-#Deaf grandma. 
-
-puts "Hey, its your grandmother! How are you?"
-
-while (response = gets.chomp) != 'BYE'
-	if response != response.upcase
-		puts "WHAT? What was that?"
-	end
-
-	if (response == response.upcase)
-		puts "NO, NOT SINCE " + (1930+rand(21).to_s + "!"
-	end
+puts "ME SO LONELY! TALK TO ME!\n"
+bye = 0
+#instead of using BYE as a condition to run while loop
+#just use bye as a counter.
+#it reduces the amount of code needed and keeps things simple
+#and easy to understand / maintain 
+while bye < 3
+  response = gets.chomp
+  if response == "BYE"
+    puts "STAY LONGER!?!"
+    bye = (bye+1)
+  elsif response == response.upcase
+  	#simple way to output random year between
+  	#1930 - 1950
+  	##{} allows substitution in string variable
+    puts "NO! NOT SINCE #{1930+rand(21)}!"
+    #resets bye to 0, because bye needs to happen 3x in a row
+    bye = 0
+  else
+    puts "Huh?! QUE!? I CAN'T HEAR YOU!"
+    #resets bye to 0, because bye needs to happen 3x in a row
+    bye = 0
+  end
 end
-
-#says goodbye is BYE is said
-puts 'Goodbye!'
-
-
-
-
-
-
-
-
-
