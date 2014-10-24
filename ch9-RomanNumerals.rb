@@ -32,6 +32,10 @@ number = (number.to_i).abs   #sets any non integer into a 0
 #refactor idea 2-
 #eliminate rep. There is a pattern in each rule to  each number
 #abstract it and add it into idea 1.
+#can use a loop that runs thru the program and outputs the equation 
+#in an iterative manner.
+
+#refactor idea 3-
 
 #conversion function
 def numeral_To_Roman integer
@@ -49,7 +53,14 @@ def numeral_To_Roman integer
 		puts 'L' * (integer/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
 	
 	elsif integer >= 100 && integer < 500			#C
-		puts 'C' * (integer/100) + 'L' * (integer/50/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+		puts 'C' * (integer/100) + 'L' * (integer%100/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+	
+	elsif integer >=500 && integer < 1000			#D
+		puts 'D' * (integer/500) + 'C' * (integer%500/100) + 'L' * (integer%100/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+
+	elsif integer >= 1000 && integer < 9999			#M
+		puts 'M' * (integer/1000) + 'D' * (integer%1000/500) + 'C' * (integer%500/100) + 'L' * (integer%100/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)		
+				
 	else
 		puts 'bacon'
 	end
