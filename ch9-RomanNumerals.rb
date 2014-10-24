@@ -37,38 +37,46 @@ number = (number.to_i).abs   #sets any non integer into a 0
 
 #refactor idea 3-
 
+
 #conversion function
 def numeral_To_Roman integer
+	#definitions
+	i = 'I' * integer
+	v = 'V' + 'I' * (integer % 5)
+	x = 'X' * (integer/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+	l = 'L' * (integer/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+	c = 'C' * (integer/100) + 'L' * (integer%100/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+	d = 'D' * (integer/500) + 'C' * (integer%500/100) + 'L' * (integer%100/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+	m = puts 'M' * (integer/1000) + 'D' * (integer%1000/500) + 'C' * (integer%500/100) + 'L' * (integer%100/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)		
+	
+	#cases
 	if integer < 5 									#I
-		puts 'I' * integer
+		puts i
 
 	elsif integer >= 5 && integer < 10				#V
-		puts 'V' + 'I' * (integer % 5)
+		puts v
 
 	elsif integer >= 10 && integer < 50				#X
-		#uses integer division to round down ;)
-		puts 'X' * (integer/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+		puts x
 
 	elsif integer >= 50 && integer < 100 			#L
-		puts 'L' * (integer/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+		puts l
 	
 	elsif integer >= 100 && integer < 500			#C
-		puts 'C' * (integer/100) + 'L' * (integer%100/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
-	
+		puts c
+
 	elsif integer >=500 && integer < 1000			#D
-		puts 'D' * (integer/500) + 'C' * (integer%500/100) + 'L' * (integer%100/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+		puts d
 
 	elsif integer >= 1000 && integer < 9999			#M
-		puts 'M' * (integer/1000) + 'D' * (integer%1000/500) + 'C' * (integer%500/100) + 'L' * (integer%100/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)		
-				
+		puts m
+
 	else
 		puts 'bacon'
 	end
 end
 
-numeral_To_Roman number
-
-#checks if non zero positive integer is inputted
+#checks if non alphabetical, non zero positive integer is inputted
 while number == 0
 	puts 'please enter a valid non zero integer'
 	number = gets.chomp
@@ -76,6 +84,6 @@ while number == 0
 	numeral_To_Roman number
 end
 
-
+numeral_To_Roman number
 
 
