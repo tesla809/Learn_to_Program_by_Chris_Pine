@@ -33,6 +33,8 @@ number = (number.to_i).abs   #sets any non integer into a 0
 #eliminate rep. There is a pattern in each rule to  each number
 #abstract it and add it into idea 1.
 
+#refactor idea 3-
+
 #conversion function
 def numeral_To_Roman integer
 	if integer < 5 									#I
@@ -49,7 +51,8 @@ def numeral_To_Roman integer
 		puts 'L' * (integer/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
 	
 	elsif integer >= 100 && integer < 500			#C
-		puts 'C' * (integer/100) + 'L' * (integer/50/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+		puts 'C' * (integer/100) + 'L' * (integer % 50/50) + 'X' * ((integer % 50)/10) + 'V' * ((integer % 10)/5) + 'I' * (integer % 5)
+						
 	else
 		puts 'bacon'
 	end
